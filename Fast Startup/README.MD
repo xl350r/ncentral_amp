@@ -5,7 +5,7 @@ Not a very pretty implementation, especially since I'm storing the output as a s
 
 ### Fast Startup Enabled
 Checks if fast startup is enabled
-![](Fast_Startup_enabled.png)
+![](Fast_startup_enabled.png)
 
 ### Disable Fast startup
 Used as a self healing task if Fast startup enabled triggers.
