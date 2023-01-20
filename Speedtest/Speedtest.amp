@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><Policy ID="282bee3f-096b-4e20-bcf4-86173de7de85" Name="Speedtest" Description="U3BlZWR0ZXN0" Version="2.30.0.0" MinRequiredVersion="2.30.0.0" RemoteCategory="0" ExecutionType="Local" MinimumPSVersionRequired="0.0.0">
+  <Object ID="{ded98aa2-a4cf-4c5c-9537-d4cb4c27a029}" Type="{B6FA6D8B-EEAA-47A6-8463-7F9A4F5BBB6E}" Data="&lt;xml&gt;&lt;OutputParameters&gt;&lt;Parameter ParameterName=&quot;DownloadSpeed&quot; Label=&quot;Download Speed&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.Download Speed&quot; /&gt;&lt;Parameter ParameterName=&quot;UploadSpeed&quot; Label=&quot;Upload Speed&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.Upload Speed&quot; /&gt;&lt;Parameter ParameterName=&quot;Latency&quot; Label=&quot;Latency&quot; ParameterType=&quot;number&quot; Value=&quot;Run PowerShell Script.Latency&quot; /&gt;&lt;/OutputParameters&gt;&lt;/xml&gt;" />
+  <LinkManager xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/PolicyExecutor">
+    <hashset xmlns:d2p1="http://schemas.datacontract.org/2004/07/System">
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>110f28eb-590c-4954-9e5d-b65eee22561d.downloadspeed</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>DownloadSpeed</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>110f28eb-590c-4954-9e5d-b65eee22561d.uploadspeed</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>UploadSpeed</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+      <d2p1:TupleOfstringstringstringstring>
+        <d2p1:m_Item1>110f28eb-590c-4954-9e5d-b65eee22561d.latency</d2p1:m_Item1>
+        <d2p1:m_Item2>OutputObject</d2p1:m_Item2>
+        <d2p1:m_Item3></d2p1:m_Item3>
+        <d2p1:m_Item4>Latency</d2p1:m_Item4>
+      </d2p1:TupleOfstringstringstringstring>
+    </hashset>
+  </LinkManager>
+  <Diagnostics OriginalVersion="2.60.0.3" />
+  <Activity mc:Ignorable="sads sap" x:Class="Policy Builder" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="clr-namespace:PolicyExecutor;assembly=PolicyExecutionEngine" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:Members>
+      <x:Property Name="PolicyGUID" Type="InArgument(x:String)" />
+    </x:Members>
+    <sap:VirtualizedContainerService.HintSize>865.333333333333,980.666666666667</sap:VirtualizedContainerService.HintSize>
+    <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+    <p:PolicySequence DisplayName="Policy Builder" sap:VirtualizedContainerService.HintSize="865.333333333333,980.666666666667" MinRequiredVersion="2.30.0.0" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+      <p:PolicySequence.Activities>
+        <p:DownloadFileFromURL OverwriteExistingFile_ItemProp="{x:Null}" RemoteFileURL_ItemProp="{x:Null}" SaveAsFileName_ItemProp="{x:Null}" UserAgent_DisplayArg="{x:Null}" UserAgent_ItemProp="{x:Null}" AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Download File From URL" sap:VirtualizedContainerService.HintSize="829.333333333333,196" MinRequiredVersion="2.30.0.0" Moniker="9f5b1477-ee73-4bcb-8f09-2922f525758b" OverwriteExistingFile="True" OverwriteExistingFile_DisplayArg="true" OverwriteExistingFile_Item="{x:Null}" RemoteFileURL="https://github.com/librespeed/speedtest-cli/releases/download/v1.0.10/librespeed-cli_1.0.10_windows_amd64.zip" RemoteFileURL_DisplayArg="https://github.com/librespeed/speedtest-cli/releases/download/v1.0.10/librespeed-cli_1.0.10_windows_amd64.zip" RemoteFileURL_Item="{x:Null}" Result="[DownloadFileFromURL_Result]" ResultString="[DownloadFileFromURL_ResultString]" RunAsCurrentLoggedOnUser="False" SaveAsFileName="C:/Speedtest.zip" SaveAsFileName_DisplayArg="C:/Speedtest.zip" SaveAsFileName_Item="{x:Null}" ScriptExecutionMethod="None" TypeName="DownloadFileFromURL" UserAgent="{x:Null}" UserAgent_Item="{x:Null}" m_bTextLinkChange="False" />
+        <p:RunPowerShellScript AssemblyName="PolicyExecutionEngine, Version=2.60.0.3, Culture=neutral, PublicKeyToken=null" DisplayName="Run PowerShell Script" sap:VirtualizedContainerService.HintSize="829.333333333333,521.333333333333" MinRequiredVersion="2.10.0.19" Moniker="110f28eb-590c-4954-9e5d-b65eee22561d" OutPut_64="[RunPowerShellScript_OutPut_64]" Result="[RunPowerShellScript_Result]" ResultString="[RunPowerShellScript_ResultString]" Results_x64="[RunPowerShellScript_Results_x64]" RunAsCurrentLoggedOnUser="False" ScriptExecutionMethod="ExecuteDebug" TypeName="RunPowerShellScript" genArgEvent="f4d7e7c2-cd71-4f53-8670-c496f97081b7" m_bTextLinkChange="False" script="aQBmACAAKABUAGUAcwB0AC0AUABhAHQAaAAgAEMAOgBcAFMAcABlAGUAZAB0AGUAcwB0AC4AegBpAHAAKQAgAHsADQAKACAAIAAgACAAaQBmACAAKAAtAG4AbwB0ACAAKAB0AGUAcwB0AC0AcABhAHQAaAAgAEMAOgBcAHMAcABlAGUAZAB0AGUAcwB0AFwAbABpAGIAcgBlAHMAcABlAGUAZAAtAGMAbABpAC4AZQB4AGUAKQAgACkAIAB7AA0ACgAgACAAIAAgACAAIAAgACAARQB4AHAAYQBuAGQALQBBAHIAYwBoAGkAdgBlACAAQwA6AFwAUwBwAGUAZQBkAHQAZQBzAHQALgB6AGkAcAAgAC0ARABlAHMAdABpAG4AYQB0AGkAbwBuAFAAYQB0AGgAIABDADoALwBzAHAAZQBlAGQAdABlAHMAdAAvACAALQBmAG8AcgBjAGUADQAKACAAIAAgACAAfQANAAoAfQANAAoAJABvAHUAdABwAHUAdABkAGEAdABhACAAPQAgAGMAbQBkACAALwBjACAAQwA6AC8AUwBwAGUAZQBkAHQAZQBzAHQALwBsAGkAYgByAGUAcwBwAGUAZQBkAC0AYwBsAGkALgBlAHgAZQAgAC0ALQBqAHMAbwBuACAALQAtAHMAZQByAHYAZQByACAANQAzAA0ACgAkAG8AdQB0AHAAdQB0AGQAYQB0AGEAIAA9ACAAQwBvAG4AdgBlAHIAdABGAHIAbwBtAC0ASgBzAG8AbgAgACQAbwB1AHQAcAB1AHQAZABhAHQAYQANAAoAJABkAG8AdwBuAGwAbwBhAGQAcwBwAGUAZQBkAD0AJABvAHUAdABwAHUAdABkAGEAdABhAC4AZABvAHcAbgBsAG8AYQBkAA0ACgAkAHUAcABsAG8AYQBkAHMAcABlAGUAZAAgAD0AIAAkAG8AdQB0AHAAdQB0AGQAYQB0AGEALgB1AHAAbABvAGEAZAANAAoAJABsAGEAdABlAG4AYwB5ACAAPQAgACQAbwB1AHQAcAB1AHQAZABhAHQAYQAuAHAAaQBuAGcADQAKAHIAZQBtAG8AdgBlAC0AaQB0AGUAbQAgAEMAOgAvAHMAcABlAGUAZAB0AGUAcwB0AC8AIAAtAGYAbwByAGMAZQAgAC0AcgBlAGMAdQByAHMAZQA=">
+          <p:RunPowerShellScript.InArgs>
+            <scg:Dictionary x:TypeArguments="x:String, p:InArg" />
+          </p:RunPowerShellScript.InArgs>
+          <p:RunPowerShellScript.OutArgs>
+            <p:OutArg x:Key="downloadspeed" ArgType="number" DisplayName="Download Speed" Name="downloadspeed">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_downloadspeed]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="uploadspeed" ArgType="number" DisplayName="Upload Speed" Name="uploadspeed">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_uploadspeed]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+            <p:OutArg x:Key="latency" ArgType="number" DisplayName="Latency" Name="latency">
+              <p:OutArg.Arg>
+                <OutArgument x:TypeArguments="x:Double">[RunPowerShellScript_latency]</OutArgument>
+              </p:OutArg.Arg>
+            </p:OutArg>
+          </p:RunPowerShellScript.OutArgs>
+        </p:RunPowerShellScript>
+      </p:PolicySequence.Activities>
+      <p:PolicySequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="DownloadFileFromURL_ResultString" />
+        <Variable x:TypeArguments="x:Double" Name="DownloadFileFromURL_Result" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_OutPut_64" />
+        <Variable x:TypeArguments="x:String" Name="RunPowerShellScript_ResultString" />
+        <Variable x:TypeArguments="scg:IEnumerable(x:Object)" Name="RunPowerShellScript_Results_x64" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_Result" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_uploadspeed" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_downloadspeed" />
+        <Variable x:TypeArguments="x:Double" Name="RunPowerShellScript_latency" />
+      </p:PolicySequence.Variables>
+    </p:PolicySequence>
+  </Activity>
+</Policy>
